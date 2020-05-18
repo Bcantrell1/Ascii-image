@@ -1,4 +1,3 @@
-const kelsea = document.getElementById('kelsea');
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 const uploadFile = document.getElementById('file-upload')
@@ -30,7 +29,6 @@ uploadFile.addEventListener('change', (e) => {
         }
         imageTuple();
     }, false)
-    // imageSize();
 
 })
 
@@ -78,5 +76,19 @@ const imageTuple = () => Caman('#canvas', img, function () {
         finalArray.push(Math.round(lightness));
       }  
     );
-    console.log(finalArray);
+    // console.log(finalArray);
+
+    //Final section of allocating characters to ascii characters based on lightness
+    let lastArray = []
+    const ascii = "S`^\",:;Il!i~+_-?][}{1)(|\\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$";
+
+    finalArray.forEach(
+        function(ele){
+            let final = String.fromCharCode(ele);
+            lastArray.push(final);
+        }
+    )
+    // console.log(lastArray);
+    console.log(lastArray.join(''));
+    
 });
